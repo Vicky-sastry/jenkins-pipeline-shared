@@ -1,5 +1,4 @@
-def call(String msg ='Project_Name1'){
-echo "${msg}"
+def call(){
 
   sh '''
                 curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4' \
@@ -7,7 +6,7 @@ echo "${msg}"
 --header 'Accept: application/json' \
 --header 'Authorization: Basic dmlja3lzYXN0cnkudnNAb3V0bG9vay5jb206enN4YXBrajN6d2s2cnR6N3ptNHR5bGk3YXlrN3l0NXllaHA1aWM3ZXJsZWM0eHNmN3R5YQ==' \
 --data-raw '{
-  "name": "${msg}",
+  "name": "pr1",
   "description": "Testing for Project creation using curl",
   "capabilities": {
     "versioncontrol": {
