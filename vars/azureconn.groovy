@@ -1,4 +1,4 @@
-def call(STRING msg='Project_Name'){
+def call(String msg ='Project_Name'){
 echo "${msg}"
 
   sh '''
