@@ -1,6 +1,6 @@
-def call(String name){
+def call(name){
 
-  sh 'echo "${name}"'
+  echo "My project name is ${name}"
   sh '''
                 curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4' \
 --header 'Content-Type: application/json' \
