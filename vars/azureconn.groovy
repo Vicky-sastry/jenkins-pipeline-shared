@@ -3,7 +3,7 @@ def call(name){
   echo "My project name is ${name}"
   sh '''
   
- sh 'echo "My project name is ${name}"'
+ echo "My project name is ${name}"
                 curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
