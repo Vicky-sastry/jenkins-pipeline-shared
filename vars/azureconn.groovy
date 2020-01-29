@@ -1,6 +1,6 @@
-def call(STRING msg='Project_Name')
+def call(STRING msg='Project_Name'){
 echo "${msg}"
-{
+
   sh '''
                 curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4' \
 --header 'Content-Type: application/json' \
