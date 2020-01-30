@@ -1,6 +1,36 @@
-  sh '''
-  def call(name){
+import groovy.json.JsonSlurper 
 
+@NonCPS
+createProject(String data){
+def jsonSlurper = new JsonSlurper() 
+def resultJson = jsonSlurper.parseText(data)
+def projectName = '"'+resultJson.key+'"' 
+   httpRequest authentication: 'AZURECR', 
+    customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json'], 
+                    [maskValue: false, name: 'Accept', value: 'application/json']], 
+    httpMode: 'POST', requestBody: """{
+     "name": "${projectName}",
+  "description": "Testing for Project creation using curl",
+  "capabilities": {
+    "versioncontrol": {
+      "sourceControlType": "Git"
+    },
+    "processTemplate": {
+      "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
+    }
+  }
+}
+}""", responseHandle: 'NONE', url: 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4'
+
+ 
+}
+def call(){
+ def request = libraryResource 'data.json'
+ createProject(request)
+}
+
+  
+  /*def call(name){
   echo "My project name is ${name}"
 
                 curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4' \
@@ -19,6 +49,5 @@
     }
   }
 }'
-}
-'''
+}*/
 
