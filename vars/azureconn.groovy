@@ -27,7 +27,7 @@ def projectName = resultJson.key
 def call(){
  def request = libraryResource 'data.json'
  createProject(request)
-   echo 'The project "$projectName" is created'
+   echo 'The project "${projectName}" is created'
 }
 
 
