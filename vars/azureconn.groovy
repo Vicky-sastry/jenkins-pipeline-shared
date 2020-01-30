@@ -19,7 +19,7 @@ def projectName = '"'+resultJson.key+'"'
       "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
     }
   }
-}""", responseHandle: 'NONE', url: 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=6.0-preview.4'
+}""", responseHandle: 'NONE', url: 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=5.1'
 
  
 }
