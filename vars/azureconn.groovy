@@ -10,15 +10,14 @@ def projectName = '"'+resultJson.key+'"'
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
     httpMode: 'POST', requestBody: """{
      "name": "${projectName}",
-  "description": "Testing for Project creation using curl",
-  "capabilities": [{
-    "versioncontrol": [{
-      "sourceControlType": "Git"
-    }],
+ // "description": "Testing for Project creation using curl",
+  //"capabilities": {
+  //  "versioncontrol": {
+    //  "sourceControlType": "Git"
+   // },
     "processTemplate": [{
       "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
     }]
-  }]
 }""", 
    /*responseHandle: 'NONE',*/ url: "https://dev.azure.com/vickysastryvs/_apis/projects?api-version=5.1"
 
