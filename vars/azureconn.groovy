@@ -4,20 +4,21 @@ import groovy.json.JsonSlurper
 createProject(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
-def projectName = '"'+resultJson.key+'"' 
+def projectName = resultJson.key 
    httpRequest authentication: 'azurecred', 
     customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json'], 
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
     httpMode: 'POST', requestBody: """{
      "name": "${projectName}",
- // "description": "Testing for Project creation using curl",
-  //"capabilities": {
-  //  "versioncontrol": {
-    //  "sourceControlType": "Git"
-   // },
-    "processTemplate": [{
+ "description": "Testing for Project creation using curl",
+  "capabilities": {
+    "versioncontrol": {
+      "sourceControlType": "Git"
+    },
+    "processTemplate": {
       "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
-    }]
+    }
+  }
 }""", 
    /*responseHandle: 'NONE',*/ url: "https://dev.azure.com/vickysastryvs/_apis/projects?api-version=5.1"
 
