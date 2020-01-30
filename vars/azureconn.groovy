@@ -1,11 +1,11 @@
-/*import groovy.json.JsonSlurper 
+import groovy.json.JsonSlurper 
 
 @NonCPS
 createProject(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def projectName = '"'+resultJson.key+'"' 
-   httpRequest authentication: 'azure', 
+   httpRequest authentication: 'azurecred', 
     customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json'], 
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
     httpMode: 'POST', requestBody: """{
@@ -19,18 +19,19 @@ def projectName = '"'+resultJson.key+'"'
       "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
     }
   }
-}""", responseHandle: 'NONE', url: 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=5.1'
+}""", 
+   /*responseHandle: 'NONE',*/ url: 'https://dev.azure.com/vickysastryvs/_apis/projects?api-version=5.1'
 
  
 }
 def call(){
  def request = libraryResource 'data.json'
  createProject(request)
-}*/
+}
 
 
   
- def call(name){
+ /*def call(name){
   echo "My project name is ${name}"
 
             sh """    
@@ -51,5 +52,5 @@ def call(){
     }
   }
 }'"""
-}
+}*/
 
