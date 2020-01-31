@@ -9,5 +9,5 @@ def call(message)
  def resultJson = jsonSlurper.parseText(request)
  def projectName = resultJson.key
   Date date = new Date() 
-  sh " echo '${date}' Azure project details' ${message} >>log.txt"
+  sh " echo '${date}' Azure project details ${message} >>log.txt"
 }
