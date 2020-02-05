@@ -24,7 +24,7 @@ def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
 
 String a = jsonObj.environments.environment.deploy.team_name
-String Teamname=a.replaceAll("\\[", "").replaceAll("\\]","");
+String team_name=a.replaceAll("\\[", "").replaceAll("\\]","");
 create(team_name)
 
 }
