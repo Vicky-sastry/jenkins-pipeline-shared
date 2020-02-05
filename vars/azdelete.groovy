@@ -11,7 +11,8 @@ def projectid = resultJson.id
     httpMode: 'DELETE', url: "https://dev.azure.com/vickysastryvs/_apis/projects/${projectid}?api-version=5.1"
 }
 def call(){
- def request = libraryResource '/workspace/output.json'
+ //def filePath = readFile "${WORKSPACE}/var/lib/jenkins/workspace/azd/output.json"
+ def request = libraryResource '${WORKSPACE}/var/lib/jenkins/workspace/azd/output.json'
  deleteProject(request)
    //echo "The project ${projectid} is deleted"
 }
