@@ -6,7 +6,7 @@ def jsonSlurper = new JsonSlurper()
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azure/out.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def projectId = resultJson.id
-            sh """
+	sh """
             curl --location --request POST 'https://dev.azure.com/vickysastryvs/_apis/projects/${projectId}/teams?api-version=5.1' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
@@ -14,6 +14,7 @@ def projectId = resultJson.id
 --data-raw '{
   "name": "${team_name}"
 }"""
+}
 
 
 	
