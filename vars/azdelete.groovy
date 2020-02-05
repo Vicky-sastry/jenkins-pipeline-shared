@@ -12,7 +12,7 @@ def projectid = resultJson.id
 }
 def call(){
  //def filePath = readFile "${WORKSPACE}/var/lib/jenkins/workspace/azd/output.json"
-   def props = readJSON file: 'dir/output.json'
+   def props = readJSON file: '/output.json'
  def request = libraryResource 'props'
  deleteProject(request)
    //echo "The project ${projectid} is deleted"
