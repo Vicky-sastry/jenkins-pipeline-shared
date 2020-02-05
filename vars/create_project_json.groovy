@@ -2,9 +2,9 @@ def call(jsondata){
 def jsonString = jsondata
 //println(jsonString)
 def jsonObj = readJSON text: jsonString
-println(jsonObj.environments)
+println(jsonObj.environment)
 
-String a=jsonObj.environments.deploy.key
+String a=jsonObj.environment.deploy.key
 //String a=jsonObj.alm.projects.project.name
 String projectName=a.replaceAll("\\[", "").replaceAll("\\]","");
 env.name = projectName
