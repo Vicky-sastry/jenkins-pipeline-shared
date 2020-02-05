@@ -1,9 +1,10 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-deleteProject(String data){
+deleteProject(){
 def jsonSlurper = new JsonSlurper() 
-def resultJson = jsonSlurper.parseText(data)
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azd/out.json"),"UTF-8"))
+def resultJson = jsonSlurper.parse(reader)
 def projectid = resultJson.id 
    httpRequest authentication: 'azurecred', 
     customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json'], 
@@ -16,7 +17,10 @@ def call(){
  //def props = readFileFromWorkspace(String 'output.json')
    //shell(readFileFromWorkspace('build.sh'))
  // def prop= jsonParse(readFile('output.json'))
- def request = Workspace 'out.json'
- deleteProject(request)
+ //def request = Workspace 'out.json'
+ 
+ 
+
+ deleteProject()
    //echo "The project ${projectid} is deleted"
 }
