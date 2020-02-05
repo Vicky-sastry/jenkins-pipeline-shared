@@ -15,8 +15,8 @@ def call(){
   // def props = readJSON file: 'output.json'
  //def props = readFileFromWorkspace(String 'output.json')
    //shell(readFileFromWorkspace('build.sh'))
-  def prop= jsonParse(readFile('output.json'))
- def request = libraryResource 'prop'
+ // def prop= jsonParse(readFile('output.json'))
+ def request = libraryResource '/home/ec2-user/out.json'
  deleteProject(request)
    //echo "The project ${projectid} is deleted"
 }
