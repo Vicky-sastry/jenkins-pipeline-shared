@@ -12,6 +12,7 @@ curl --location --request GET 'https://dev.azure.com/vickysastryvs/_apis/project
 --header 'Authorization: Basic dmlja3lzYXN0cnkudnNAb3V0bG9vay5jb206enN4YXBrajN6d2s2cnR6N3ptNHR5bGk3YXlrN3l0NXllaHA1aWM3ZXJsZWM0eHNmN3R5YQ=='
 -H 'content-type: application/json'  | json_reformat
 """
+}
 
 def call(jsondata){
 def jsonString = jsondata
@@ -21,3 +22,4 @@ println(jsonObj.environments.environment)
 String a=jsonObj.environments.environment.deploy.key
 String projectName=a.replaceAll("\\[", "").replaceAll("\\]","");
 env.name = projectName
+}
