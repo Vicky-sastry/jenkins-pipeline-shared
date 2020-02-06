@@ -1,9 +1,9 @@
-import groovy.json.JsonSlurper 
+import groovy.json.*
 
 @NonCPS
 deleteProject(){
 def jsonSlurper = new JsonSlurper() 
-def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azd/out.json"),"UTF-8"))
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azure/out.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def projectid = resultJson.id 
    sh """
