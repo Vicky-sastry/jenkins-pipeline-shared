@@ -11,8 +11,6 @@ sh """
 curl --location --request GET 'https://dev.azure.com/${orgname}/_apis/teams?api-version=5.1-preview.3' \
 --header 'Accept: application/json' \
 --header 'Authorization: Basic dmlja3lzYXN0cnkudnNAb3V0bG9vay5jb206enN4YXBrajN6d2s2cnR6N3ptNHR5bGk3YXlrN3l0NXllaHA1aWM3ZXJsZWM0eHNmN3R5YQ==' \
-
--H 'content-type: application/json'  | json_reformat
 """
 }
 
