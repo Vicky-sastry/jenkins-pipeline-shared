@@ -12,7 +12,7 @@ def projectid = resultJson.id
 --header 'Authorization: Basic dmlja3lzYXN0cnkudnNAb3V0bG9vay5jb206enN4YXBrajN6d2s2cnR6N3ptNHR5bGk3YXlrN3l0NXllaHA1aWM3ZXJsZWM0eHNmN3R5YQ=='
 """
 }
-  
-def call(){
+
+def call(jsondata){
  deleteProject()
 }
