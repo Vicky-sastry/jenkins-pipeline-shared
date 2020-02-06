@@ -6,7 +6,7 @@ println(jsonObj.environments.environment)
 String a=jsonObj.environments.environment.deploy.organization
 String orgname=a.replaceAll("\\[", "").replaceAll("\\]","");
 env.name = orgname
-}
+
 sh """
 curl --location --request GET 'https://dev.azure.com/${orgname}/_apis/teams?api-version=5.1-preview.3' \
 --header 'Accept: application/json' \
