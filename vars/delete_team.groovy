@@ -3,6 +3,10 @@ import groovy.json.*
 @NonCPS
 delete_team(){
 def jsonSlurper = new JsonSlurper()
+def read = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azure/out.json"),"UTF-8"))
+def resultJs = jsonSlurper.parse(read)
+def projectid = resultJs.id
+  
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azure/team.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def teamid = resultJson.value[0].id
