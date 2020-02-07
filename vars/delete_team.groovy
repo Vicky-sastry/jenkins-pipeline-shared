@@ -9,7 +9,7 @@ def projectid = resultJs.id
   
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/azure/team.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
-def teamid = resultJson.value[0].id
+def teamid = resultJson.value[1].id
 
   sh """ 
     curl --location --request DELETE 'https://dev.azure.com/vickysastryvs/_apis/projects/${projectid}/teams/${teamid}?api-version=5.1' \
