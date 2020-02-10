@@ -1,7 +1,7 @@
 import groovy.json.*
 
 @NonCPS
-deleteProject(){
+deleteProject(String orgname){
 def jsonSlurper = new JsonSlurper() 
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/out.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
