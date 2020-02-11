@@ -7,7 +7,9 @@ println(jsonObj.environments.environment)
 String a=jsonObj.environments.environment.deploy.key
 //String a=jsonObj.alm.projects.project.name
 String projectName=a.replaceAll("\\[", "").replaceAll("\\]","");
-env.name = projectName
+
+String b=jsonObj.environments.environment.deploy.organization
+String orgname=b.replaceAll("\\[", "").replaceAll("\\]","");
 
  sh """
       curl --location --request GET 'https://dev.azure.com/${orgname}/${projectName}/_apis/git/repositories/${projectName}/commits?api-version=5.1' \
