@@ -3,7 +3,7 @@ import groovy.json.*
 @NonCPS
 create(String orgname, String projectName){
 def jsonSlurper = new JsonSlurper()
-def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/out.json"),"UTF-8"))
+//def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/out.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def projectId = resultJson.id
 sh """
@@ -16,7 +16,7 @@ curl --location --request GET 'https://dev.azure.com/vickysastryvs/d2/_apis/git/
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
-println(jsonObj.environments.environment)
+//println(jsonObj.environments.environment)
 
 String a=jsonObj.environments.environment.deploy.key
 String projectName=a.replaceAll("\\[", "").replaceAll("\\]","");
