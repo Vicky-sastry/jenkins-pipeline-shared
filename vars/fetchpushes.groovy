@@ -1,11 +1,11 @@
 import groovy.json.*
 
-@NonCPS
+/*@NonCPS
 create(String orgname){
 def jsonSlurper = new JsonSlurper()
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/pushes.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
-def pushcount = resultJson.count
+def pushcount = resultJson.count*/
   
   sh """ 
 curl --location --request GET 'https://dev.azure.com/${orgname}/${projectName}/_apis/git/repositories/${projectName}/pushes?api-version=5.1' \
