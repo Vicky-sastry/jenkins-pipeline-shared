@@ -1,13 +1,4 @@
 import groovy.json.*
-
-/*@NonCPS
-create(String orgname){
-def jsonSlurper = new JsonSlurper()
-def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/pushes.json"),"UTF-8"))
-def resultJson = jsonSlurper.parse(reader)
-def pushcount = resultJson.count*/
-  
-
 def call(jsondata){
 def jsonString = jsondata
 def jsonObj = readJSON text: jsonString
