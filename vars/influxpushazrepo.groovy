@@ -16,7 +16,7 @@ def result2 = jsonSlurper.parse(reader2)
 def pushcount = result2.count
   
 echo "$count, $pullreqcount, $pushcount"
-sh """curl -i -XPOST 'http://ec2-13-58-47-71.us-east-2.compute.amazonaws.com:8086/write?db=Collector' --data-binary 'azurerepo commits=${count},pullrequests=${pullreqcount},pushes=${pushcount}'
+sh """curl -i -XPOST 'http://ec2-13-58-47-71.us-east-2.compute.amazonaws.com:8086/write?db=Collector' --data asOfDate="20200213" --data-binary 'azurerepo commits=${count},pullrequests=${pullreqcount},pushes=${pushcount}'
 """
 }
 
