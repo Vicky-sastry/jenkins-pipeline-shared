@@ -11,7 +11,7 @@ for(i=0;i<count;i++)
 {
 def val = resultJson.value[i].name
 def id = resultJson.value[i].id
-JSON.("name":val,"id":id)  
+JSON.add("name":val,"id":id)  
 }
 println(JSON)
  sh """
