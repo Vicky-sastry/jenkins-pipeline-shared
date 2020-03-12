@@ -3,7 +3,7 @@ import groovy.json.*
 @NonCPS
 create(String orgname){
 def jsonSlurper = new JsonSlurper()
-def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/commit.json"),"UTF-8"))
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/projectlist.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def count = resultJson.count
 List<String> JSON = new ArrayList<String>()
