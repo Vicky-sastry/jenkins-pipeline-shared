@@ -10,14 +10,16 @@ def jsonSlurper = new JsonSlurper()
 def reader = new BufferedReader(new InputStreamReader(new FileInputStream("/var/lib/jenkins/workspace/${JOB_NAME}/projectlist.json"),"UTF-8"))
 def resultJson = jsonSlurper.parse(reader)
 def count = resultJson.count
+  print(count)
 List<String> JSON = new ArrayList<String>()
 for(i=0;i<count;i++)
 {
+  print("zcda")
 def val = resultJson.value[i].name
 def id = resultJson.value[i].id
 JSON.add("name":val,"id":id)  
 }
-println(JSON)
+print(JSON)
 }
  
 def call(jsondata){
