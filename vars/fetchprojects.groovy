@@ -16,6 +16,12 @@ def id = resultJson.value[i].id
 JSON.add("name":val,"id":id)  
 }
 print(JSON)
+   jsonBuilder.AZURE(
+  
+  "ID&NAMES" : JSON
+     )
+  File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/OUTPUT.json")
+file.write(jsonBuilder.toPrettyString())
 }
  
 def call(jsondata){
