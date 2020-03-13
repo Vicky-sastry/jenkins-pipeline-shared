@@ -12,14 +12,14 @@ for(i=0;i<count;i++)
 {
   print("zcda")
 def val = resultJson.value[i].name
-def id = resultJson.value[i].id
-JSON.add("name":val,"id":id)  
+//def id = resultJson.value[i].id
+JSON.add("name":val)  
 }
 print(JSON)
   def jsonBuilder = new groovy.json.JsonBuilder()
    jsonBuilder.AZURE(
   
-  "ID&NAMES" : JSON
+  "NAMES" : JSON
      )
   File file = new File("/var/lib/jenkins/workspace/${JOB_NAME}/OUTPUT.json")
 file.write(jsonBuilder.toPrettyString())
