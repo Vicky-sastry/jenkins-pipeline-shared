@@ -16,6 +16,7 @@ def id = resultJson.value[i].id
 JSON.add("name":val,"id":id)  
 }
 print(JSON)
+  def jsonBuilder = new groovy.json.JsonBuilder()
    jsonBuilder.AZURE(
   
   "ID&NAMES" : JSON
